@@ -1,18 +1,5 @@
   <div class="container">
-    <div [style.background-color]="background">
-    <div class="header">
-      <h1 [@headerAnimation]="headerState">{{header}}</h1>
-      <h2> {{ titre }} </h2>
-    </div>
-    <div class="container">
-      <ul>
-        <li *ngFor="let contact of contacts;">
-          <span> {{contact.first_name}} {{contact.last_name}}  </span>
-        </li>
-      </ul>
-    </div>
-    <button class="waves-effect waves-light btn" (click)="animateHeader()">Animer</button>
-   </div>
+   <app-header></app-header>
    <app-contacts></app-contacts>
   <router-outlet></router-outlet>
 </div>
