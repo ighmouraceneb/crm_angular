@@ -1,16 +1,31 @@
 import { Component } from '@angular/core';
+import {trigger, state, style, transition, animate} from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations : [
+  	trigger('headerAnimation',[
+  		state('inactive', style({
+  			transform: 'scale(1)'
+  		})),
+  		state('active', style({
+  			transform: 'scale(1.5)'
+  		})),
+  		transition('active <=> inactive', animate('500ms ease-in-out')),
+  		
+  	])
+  ]
 })
 export class AppComponent {
-  header = 'CRM';
-  titre = 'gestion des relations clients';
-  contact = [{"first_name":"Tatum","last_name":"Vernon","email":"tvernon0@lycos.com","gender":"Female","company":"Youopia"},
-{"first_name":"Anet","last_name":"Bellis","email":"abellis1@cnn.com","gender":"Female","company":"Oloo"},
-{"first_name":"Pippa","last_name":"Goymer","email":"pgoymer2@ihg.com","gender":"Female","company":"Browsecat"},
-{"first_name":"Addison","last_name":"Lawther","email":"alawther3@walmart.com","gender":"Male","company":"Yoveo"},
-{"first_name":"Anya","last_name":"Franzman","email":"afranzman4@bravesites.com","gender":"Female","company":"Twitterbeat"}]
+	background = '#f5f6fa';
+ 	header = 'CRM';
+  	titre = 'gestion des relations clients';
+  	headerState = 'inactive';
+
+  	animateHeader() {
+  		this.headerState = (this.headerState === 'inactive'? 'active' : 'inactive');
+  	}
+
 }
