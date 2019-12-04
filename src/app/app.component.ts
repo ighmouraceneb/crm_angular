@@ -18,14 +18,4 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
   	])
   ]
 })
-export class AppComponent {
-	background = '#f5f6fa';
- 	header = 'CRM';
-  	titre = 'gestion des relations clients';
-  	headerState = 'inactive';
-
-  	animateHeader() {
-  		this.headerState = (this.headerState === 'inactive'? 'active' : 'inactive');
-  	}
-
-}
+export class AppComponent {}
