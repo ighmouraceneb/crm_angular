@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {trigger, state, style, transition, animate} from '@angular/animations';
+import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Contact } from '../contact';
 
 @Component({
   selector: 'app-contacts',
@@ -27,32 +28,25 @@ export class ContactsComponent  {
 		'outline' : '0',
 		'padding' : '22px 18px'
 	}
-  	contacts = [{"first_name":"Tatum","last_name":"Vernon","email":"tvernon0@lycos.com","gender":"Female","company":"Youopia"},
-			{"first_name":"Anet","last_name":"Bellis","email":"abellis1@cnn.com","gender":"Female","company":"Oloo"},
-			{"first_name":"Pippa","last_name":"Goymer","email":"pgoymer2@ihg.com","gender":"Female","company":"Browsecat"},
-			{"first_name":"Addison","last_name":"Lawther","email":"alawther3@walmart.com","gender":"Male","company":"Yoveo"},
-			{"first_name":"Anya","last_name":"Franzman","email":"afranzman4@bravesites.com","gender":"Female","company":"Twitterbeat"}]
 
-	first_name = "";
-	last_name = "";
-	email = "";
-	gender = "";
-	company = "";
+	companies = ['Linkedin', 'Manny Designs', 'Apple', 'Other'];
 
-	addContact(value) {
-		this.contacts.unshift({
-			first_name : value.first_name,
-			last_name : value.last_name,
-			email  : value.email,
-			gender : value.gender,
-			company : value.company
-		})
+	model = [new Contact('Manny', 'Henry','mal', 'me@mail.com',  this.companies[0])];
 
-		this.first_name = "";
-		this.last_name = "";
-		this.email = "";
-		this.gender = "";
-		this.company = "";
+	onSubmit(value:any) {
+		this.model.unshift(
+			new Contact(
+				value.first_name,
+				value.last_name,
+				value.gender,
+				value.email,
+				value.company
+				)
+		)
+
+
+
 	}
+
 
 }
