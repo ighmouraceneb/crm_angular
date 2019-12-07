@@ -29,7 +29,6 @@ export class ContactsComponent  {
 		'padding' : '22px 18px'
 	}
 
-	companies = ['Linkedin', 'Manny Designs', 'Apple', 'Other'];
 
 	model = [new Contact('Manny', 'Henry','mal', 'me@mail.com',  this.companies[0])];
 
