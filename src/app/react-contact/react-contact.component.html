@@ -2,21 +2,21 @@
 	<form class="cols12" [formGroup]="reactForm" (ngSubmit)="onSubmit()">
 		<div class="row">
 			<div class="input-field col s4">
-				<input  type="text"  required class="validate" formControlName="first_name">
+				<input  id="first_name" type="text"  required class="validate" formControlName="first_name">
 				<label for="first_name">Nom</label>
 				<div *ngIf="!reactForm.controls['first_name'].valid">
 					SVP entrez un nom
 				</div>
 			</div>
 			<div class="input-field col s4">
-				<input  type="text" id="last_name" required class="validate" formControlName="last_name">
+				<input id="last_name" type="text" id="last_name" required class="validate" formControlName="last_name">
 				<label for="last_name">Prénom</label>
 				<div *ngIf="!reactForm.controls['last_name'].valid">
 					SVP entrez un prénom
 				</div>
 			</div>
 			<div class="input-field col s4">
-				<input type="text" required class="validate" formControlName="gender">
+				<input id="gender" type="text" required class="validate" formControlName="gender">
 				<label for="gender">Genre</label>
 				<div *ngIf="!reactForm.controls['gender'].valid">
 					SVP entrez un genre
@@ -25,7 +25,7 @@
 		</div>
 		<div class="row">
 			<div class="input-field col s4">
-				<input  type="email"  required class="validate" formControlName="email">
+				<input id="email" type="email"  required class="validate" formControlName="email">
 				<label for="email">Email</label>
 				<div *ngIf="!reactForm.controls['email'].valid">
 					SVP entrez un email
@@ -36,7 +36,6 @@
 			      <option value="" disabled selected>Choisir une compagnie</option>
 			      <option *ngFor="let company of companies" [value]="company">{{company}}</option>
 			    </select>
-			    <label for="company">Compagnie</label>
 			</div>
 			<button class="waves-effect waves-light btn" id="btn" type="submit" [disabled]="reactForm.invalid">Ajouter un contact</button>
 		</div>

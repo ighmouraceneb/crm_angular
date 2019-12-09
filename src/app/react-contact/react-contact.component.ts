@@ -44,9 +44,9 @@ export class ReactContactComponent implements OnInit {
    }
    createForm() {
    	this.reactForm = this.fb.group({
-   		first_name: ['', Validators.compose([Validators.required, Validators.minLength(5)])],
-   		last_name: ['', Validators.compose([Validators.required, Validators.minLength(5)])],
-   		email: ['', Validators.compose([Validators.required, Validators.minLength(5)])],
+   		first_name: ['', Validators.compose([Validators.required, Validators.minLength(3),Validators.maxLength(25) ])],
+   		last_name: ['', Validators.compose([Validators.required, Validators.minLength(3),Validators.maxLength(25) ])],
+   		email: ['', Validators.compose([Validators.required, Validators.email])],
    		gender: ['', Validators.required],
    		company: ''
    	})
